@@ -1,0 +1,143 @@
+/*this is a comment*/
+#Nesting h2 {
+  color: purple;
+}
+
+#Nesting ol {
+  color: red;
+  background-color: black;
+}
+
+#Nesting ol li {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#Nesting ol li:hover {
+  color: red;
+  background-color: white;
+  cursor: pointer;
+}
+
+.main-list {
+  color: red;
+  background-color: blue;
+}
+
+.main-list .main-list-item {
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+
+.default {
+  border: 1px solid blue;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
+}
+
+#Variable li {
+  font-size: 32px;
+}
+
+#Variable li:first-child {
+  color: red;
+}
+
+#Variable li:nth-child(even) {
+  color: rgba(68, 28, 133, 0.3);
+}
+
+#Variable li:last-child:hover {
+  color: rgba(68, 28, 133, 0.3);
+  background-color: rgba(68, 28, 133, 0.5);
+  cursor: pointer;
+}
+
+#Default li.default {
+  font-size: 32px;
+}
+
+#Default li.default:first-child {
+  color: red;
+  color: blue;
+}
+
+#Default li.default:nth-child(even) {
+  color: rgba(68, 28, 133, 0.3);
+  color: blue;
+}
+
+#Default li.default:last-child:hover {
+  color: rgba(68, 28, 133, 0.3);
+  background-color: blue;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
+}
+
+#Scope li {
+  font-weight: 900;
+  color: red;
+}
+
+#Scope li:first-child {
+  color: green;
+}
+
+#Scope li:nth-child(2) {
+  color: rgba(68, 28, 133, 0.3);
+  color: green;
+}
+
+.Shadowing p {
+  font-size: 2rem;
+}
+
+.Shadowing p:first-child {
+  color: green;
+  font-weight: 500;
+}
+
+.Shadowing p:nth-child(2) {
+  color: blue;
+  font-weight: 900;
+}
+
+.Shadowing p:last-child {
+  color: blue;
+  font-weight: 900;
+}
+
+.Flow p {
+  background-color: #000004;
+  border-radius: 5px solid #e0c0f4;
+  color: #ff3333;
+  border-radius: 3px;
+  font-size: 2rem;
+}
+
+.Flow p:first-child {
+  background-color: #3f4bf7;
+  border: 5px solid #6a1b9a;
+  color: #ff3333;
+}
+
+.Advanced p {
+  font-size: 2rem;
+}
+
+.Advanced p:first-child {
+  background-color: green;
+  color: #c9d653;
+}
+
+.Advanced p:nth-child(2) {
+  background-color: lightblue;
+  color: #1c2629;
+}
+
+.Advanced p:last-child {
+  background-color: red;
+  color: white;
+}

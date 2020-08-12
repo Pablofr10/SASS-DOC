@@ -1,0 +1,48 @@
+// SASS Comment
+/*this is a comment*/
+// Nesting
+
+// #SYNTAX h1{
+//     color: red;
+// }
+
+// #Nesting ol{
+//     color: red;
+// }
+
+// #Nesting ol li{
+//     color: green;
+// }
+// #Nesting ol li:hover{
+//     color: blue;
+// }
+
+#Nesting {
+  h2 {
+    color: purple;
+  }
+  ol {
+    color: red;
+    background-color: black;
+    li {
+      color: white;
+      font-size: 2rem;
+      text-align: center;
+      &:hover {
+        color: red;
+        background-color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.main-list {
+    color: red;
+    background-color: blue;
+    #{&}-item{
+        color: white;
+        cursor: pointer;
+        text-align: center;
+    }
+}
