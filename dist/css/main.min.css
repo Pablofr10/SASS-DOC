@@ -141,3 +141,60 @@
   background-color: red;
   color: white;
 }
+
+#Numbers .Numbers-list li:first-child {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+#Numbers .Numbers-list li:nth-child(2) {
+  font-size: 32.5px;
+  border: 2.5px solid red;
+}
+
+#Numbers .Numbers-list li:nth-child(3) {
+  font-size: 18px;
+  border: 2.8px solid blue;
+  border-radius: 20%;
+  padding-top: 25%;
+}
+
+#Numbers .Numbers-list li:nth-child(4) {
+  font-size: 32.9px;
+  border: 0.3em dotted #831483;
+}
+
+#Numbers .Numbers-list li:nth-child(4) span:first-child {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+#Numbers .Numbers-list li:nth-child(4) span:last-child {
+  font-weight: 900;
+  font-size: 3.1rem;
+}
+
+#Strings .Strings-list {
+  font-size: 1.1rem;
+}
+
+#Strings .Strings-list li:first-child {
+  font-family: "Helvetica";
+}
+
+#Strings .Strings-list li:nth-child(2) {
+  font-family: "Time New Roman";
+}
+
+#Strings .Strings-list li:nth-child(3) {
+  font-family: "Helvetica";
+  font-weight: bold;
+}
+
+#Strings .Strings-list li:last-child span:first-child {
+  font-family: "Helveticasans-serif";
+}
+
+#Strings .Strings-list li:last-child span:last-child {
+  font-family: sans-serif;
+}

@@ -1,0 +1,73 @@
+// Numbers
+
+#Numbers {
+  .Numbers-list {
+    li {
+      &:first-child {
+        font-weight: 700;
+        font-size: 32px;
+      }
+      &:nth-child(2) {
+        font-size: 32.5px;
+        border: 2.5px solid red;
+      }
+      &:nth-child(3) {
+        font-size: 18px;
+        border: 2.8px solid blue;
+        border-radius: 20%;
+        padding-top: 25%;
+      }
+      &:nth-child(4) {
+        font-size: 32.9px;
+        border: 0.3em dotted #831483;
+        span {
+          &:first-child {
+            font-size: 2em;
+            font-weight: 700;
+          }
+          &:last-child {
+            font-weight: 900;
+            font-size: 3.1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Strings
+// Normal Strings
+$string-1: 'Helvetica';
+$string-2: 'Time New Roman';
+
+// Escapes "\"
+$string-3: bold;
+$string-4: $string-1 + 'sans-serif';
+
+#Strings {
+  .Strings-list {
+    font-size: 1.1rem;
+    li {
+      &:first-child {
+        font-family: $string-1;
+      }
+      &:nth-child(2) {
+        font-family: $string-2;
+      }
+      &:nth-child(3) {
+        font-family: $string-1;
+        font-weight: $string-3;
+      }
+      &:last-child {
+        span {
+          &:first-child {
+            font-family: $string-4;
+          }
+          &:last-child{
+              font-family: sans-serif;
+          }
+        }
+      }
+    }
+  }
+}
