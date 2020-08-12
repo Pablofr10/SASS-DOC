@@ -1,6 +1,6 @@
 // Variables
 // Create Variables
-@import 'library';
+@import "library";
 
 $font-s: 32px;
 $primary-color: red;
@@ -133,30 +133,66 @@ $text-color: red !default;
 
 // Advance Variable Functions
 $theme-color: (
-  'success': green,
-  'info': lightblue,
-  'warning': red,
+  "success": green,
+  "info": lightblue,
+  "warning": red,
 );
 $colors: (
-  'light': rgb(201, 214, 83),
-  'dark': rgb(28, 38, 41),
-  'white': white,
+  "light": rgb(201, 214, 83),
+  "dark": rgb(28, 38, 41),
+  "white": white,
 );
 
 .Advanced {
   p {
     font-size: 2rem;
     &:first-child {
-      background-color: map-get($theme-color, 'success');
-      color: map-get($colors, 'light');
+      background-color: map-get($theme-color, "success");
+      color: map-get($colors, "light");
     }
     &:nth-child(2) {
-      background-color: map-get($theme-color, 'info');
-      color: map-get($colors, 'dark');
+      background-color: map-get($theme-color, "info");
+      color: map-get($colors, "dark");
     }
     &:last-child {
-      background-color: map-get($theme-color, 'warning');
-      color: map-get($colors, 'white');
+      background-color: map-get($theme-color, "warning");
+      color: map-get($colors, "white");
+    }
+  }
+}
+
+// Colors
+
+$named: red;
+$hexa: #444;
+$rgb: rgb(25, 16, 30);
+
+#Colors {
+  .Colors-list{
+    font-size: 1.5rem;
+    li{
+      &:first-child{
+        color: $named;
+      }
+      &:nth-child(2){
+        color: $named;
+      }
+      &:nth-child(3){
+        background-color: $rgb;
+        $rgb: rgb(103, 28, 143);
+        color: $rgb;
+      }
+      &:nth-child(4){
+        background-color: rgba($rgb, 0.55);
+        span {
+          &:first-child {
+            background-color: rgba($named, 0.7);
+          }
+          &:last-child{
+            background-color: rgba($hexa, 0.2);
+          }
+        }
+      }
     }
   }
 }
