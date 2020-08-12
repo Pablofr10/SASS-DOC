@@ -168,31 +168,53 @@ $hexa: #444;
 $rgb: rgb(25, 16, 30);
 
 #Colors {
-  .Colors-list{
+  .Colors-list {
     font-size: 1.5rem;
-    li{
-      &:first-child{
+    li {
+      &:first-child {
         color: $named;
       }
-      &:nth-child(2){
+      &:nth-child(2) {
         color: $named;
       }
-      &:nth-child(3){
+      &:nth-child(3) {
         background-color: $rgb;
         $rgb: rgb(103, 28, 143);
         color: $rgb;
       }
-      &:nth-child(4){
+      &:nth-child(4) {
         background-color: rgba($rgb, 0.55);
         span {
           &:first-child {
             background-color: rgba($named, 0.7);
           }
-          &:last-child{
+          &:last-child {
             background-color: rgba($hexa, 0.2);
           }
         }
       }
     }
+  }
+}
+
+// Lists
+
+$list-1: 2rem, 3rem, 4rem;
+$bg-c: green, blue, red;
+
+$list-1: append($list-1, 5rem);
+$bg-c: append($bg-c, purple);
+
+@each $size in $list-1 {
+  .list-item-#{$size} {
+    font-size: $size;
+    height: $size;
+    width: $size;
+  }
+}
+
+@each $bg in $bg-c {
+  .bg-#{$bg} {
+    background-color: $bg;
   }
 }
