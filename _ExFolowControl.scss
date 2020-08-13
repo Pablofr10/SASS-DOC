@@ -148,3 +148,43 @@ $light-text: #d2e1dd;
 .next {
   @include triangule(2rem, red, right);
 }
+
+// @each
+
+// Example 1
+
+$sizes: 20px, 30px, 40px;
+
+@each $size in $sizes {
+  .each-item-#{$size} {
+    font-size: $size;
+    height: $size;
+    width: $size;
+    background-color: red;
+  }
+}
+
+// Example 2
+$sizes: 100px, 200px, 300px;
+$colors: red, green, blue;
+
+@mixin Btn-styles {
+  @each $size in $sizes {
+    &-#{$size} {
+      height: $size/2;
+      width: $size;
+      font-size: $size * 0.2;
+      border-radius: $size * 0.1;
+    }
+  }
+  @each $color in $colors {
+    &-#{$color}{
+      background-color: $color;
+      color: lighten($color, 50%);
+    }
+  }
+}
+
+.bt{
+  @include Btn-styles();
+}
