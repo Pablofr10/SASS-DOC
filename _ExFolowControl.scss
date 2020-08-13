@@ -72,8 +72,8 @@ $light-text: #d2e1dd;
   font-size: 2rem;
   text-align: right;
   padding: 0 0.5rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: blue;
 }
 
@@ -178,13 +178,46 @@ $colors: red, green, blue;
     }
   }
   @each $color in $colors {
-    &-#{$color}{
+    &-#{$color} {
       background-color: $color;
       color: lighten($color, 50%);
     }
   }
 }
 
-.bt{
+.bt {
   @include Btn-styles();
+}
+
+// @for
+
+$base-color: rgb(102, 87, 0);
+$font-size: 1.1rem;
+
+#for {
+  @for $i from 1 through 4 {
+    li:nth-child(3n + #{$i}) {
+      background-color: lighten($base-color, $i * 5%);
+    }
+  }
+  @for $j from 1 through 4 {
+    li:nth-child(3n + #{$j}) {
+      font-size: $j + 0.1rem;
+    }
+  }
+}
+
+// @while
+
+@function scale-below($value, $base, $ration: 1.618) {
+  @while $value > $base {
+    $value: $value / $ration;
+  }
+  @return $value;
+}
+
+$normal-font-size: 16px;
+
+.while{
+  font-size: scale-below(40px, 30px);
 }
