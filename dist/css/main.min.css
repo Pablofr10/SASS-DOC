@@ -34,8 +34,7 @@
 .default {
   border: 1px solid blue;
   border-radius: 10px;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
 }
 
 #Variable li {
@@ -74,8 +73,7 @@
   color: rgba(68, 28, 133, 0.3);
   background-color: blue;
   cursor: pointer;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
 }
 
 #Scope li {
@@ -269,4 +267,46 @@
 #Strings .Strings-list li:last-child span:last-child {
   font-family: sans-serif;
 }
-/*# sourceMappingURL=main.min.css.map */
+
+.Maps-list .list-item {
+  font-size: 1.5rem;
+}
+
+.Maps-list .list-item:first-child {
+  color: blue;
+}
+
+.Maps-list .list-item:nth-child(2) {
+  color: darkblue;
+}
+
+.Maps-list .list-item:nth-child(3) {
+  color: lightblue;
+}
+
+.Maps-list .list-item:nth-child(4) {
+  background-color: red;
+  color: lightblue;
+}
+
+.Maps-list .list-item:nth-child(5) {
+  background-color: darkred;
+  color: pink;
+}
+
+.square {
+  background-color: red;
+  width: 150px;
+  height: 150px;
+}
+
+.circle {
+  background-color: blue;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+}
+
+.container {
+  color: #ff6666;
+}

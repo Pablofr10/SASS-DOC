@@ -63,11 +63,78 @@ $string-4: $string-1 + 'sans-serif';
           &:first-child {
             font-family: $string-4;
           }
-          &:last-child{
-              font-family: sans-serif;
+          &:last-child {
+            font-family: sans-serif;
           }
         }
       }
     }
   }
+}
+
+// Maps
+
+$blue-color-map: (
+  'light': lightblue,
+  'medium': blue,
+  'hard': darkblue
+);
+
+$background-color-map: (
+    'bg-light': pink,
+    'bg-medium': red,
+    'bg-hard': darkred
+);
+
+$bg_and_text_color-map: map-merge($blue-color-map, $background-color-map);
+
+.Maps-list {
+  .list-item {
+    font-size: 1.5rem;
+    &:first-child {
+      color: map-get($blue-color-map, medium);
+    }
+    &:nth-child(2){
+        color: map-get($blue-color-map, hard);
+    }
+    &:nth-child(3){
+        color: map-get($blue-color-map, light);
+    }
+    &:nth-child(4){
+        background-color: map-get($background-color-map, bg-medium);
+        color: map-get($bg_and_text_color-map, light);
+    }
+    &:nth-child(5){
+        background-color: map-get($background-color-map, bg-hard);
+        color: map-get($bg_and_text_color-map, bg-light);
+    }
+  }
+}
+
+// Booleans
+
+@mixin avatar($size, $circle: true) {
+    width: $size;
+    height: $size;
+    @if $circle {
+        border-radius: $size / 2;
+    }
+}
+
+.square {
+    background-color: red;
+    @include avatar(150px, false)
+}
+
+.circle {
+    background-color: blue;
+    @include avatar(150px)
+}
+
+// Null 
+$variable: null;
+$color: red;
+
+.container{
+    color: lighten($color, 20%)
 }
