@@ -1,0 +1,134 @@
+// Functions
+
+// @function <name>(<argument>){
+//     @return;
+// }
+
+// Fonts Map
+$font-size: (
+  'small': 1.5rem,
+  'medium': 2.5rem,
+  'lager': 3rem,
+);
+
+// Color Map
+$color-map: (
+  'success': green,
+  'danger': red,
+  'info': blue,
+);
+
+// Function for Font size
+@function fontSize($size) {
+  @return map-get($font-size, $size);
+}
+
+// Function for colors
+@function colorMap($color) {
+  @return map-get($color-map, $color);
+}
+
+//Merged Maps
+$font-color_size: map-merge($font-size, $color-map);
+
+// Functions for font size and color
+
+@function style($style) {
+  @return map-get($font-color_size, $style);
+}
+
+#Function {
+  li {
+    &:first-child {
+      font-size: fontSize(small);
+    }
+    &:nth-child(2) {
+      font-size: fontSize(medium);
+    }
+    &:nth-child(3) {
+      font-size: fontSize(lager);
+    }
+    &:nth-child(4) {
+      color: colorMap(success);
+      font-size: fontSize(medium);
+    }
+    &:nth-child(5) {
+      color: colorMap(danger);
+      font-size: fontSize(small);
+    }
+    &:nth-child(6) {
+      color: colorMap(info);
+      font-size: fontSize(lager);
+    }
+    &:last-child {
+      color: style(success);
+      font-size: style(lager);
+    }
+  }
+}
+
+// Exemplo 2
+$btn-t-c: (
+  'light': #fff,
+  'dark': #333,
+);
+
+$btn-bg-c: (
+  'bg-success': #28a745,
+  'bg-danger': #dc3545,
+  'bg-info': #17a2b8,
+  'bg-warning': #ffc107
+);
+
+$colors: map-merge($btn-t-c, $btn-bg-c);
+
+@function colors($bt-c){
+    @return map-get($colors, $bt-c)
+}
+
+$size: 1rem;
+
+.btn{
+    font-size: $size * 1.1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    letter-spacing: $size / 8;
+    padding: $size * 0.5;
+    border: none;
+
+    &-success{
+        background-color: colors(bg-success);
+        color: colors(light);
+        &:hover{
+            cursor: pointer;
+            background-color: darken(colors(bg-success), 10%);
+        }
+    }
+
+    &-danger{
+        background-color: colors(bg-danger);
+        color: colors(light);
+        &:hover{
+            cursor: pointer;
+            background-color: darken(colors(bg-danger), 10%);
+        }
+    }
+
+    &-info{
+        background-color: colors(bg-info);
+        color: colors(light);
+        &:hover{
+            cursor: pointer;
+            background-color: darken(colors(bg-info), 10%);
+        }
+    }
+
+    &-warning{
+        background-color: colors(bg-warning);
+        color: colors(light);
+        &:hover{
+            cursor: pointer;
+            background-color: darken(colors(bg-warning), 10%);
+        }
+    }
+}
