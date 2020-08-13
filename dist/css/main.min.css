@@ -34,7 +34,8 @@
 .default {
   border: 1px solid blue;
   border-radius: 10px;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
 }
 
 #Variable li {
@@ -73,7 +74,8 @@
   color: rgba(68, 28, 133, 0.3);
   background-color: blue;
   cursor: pointer;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
 }
 
 #Scope li {
@@ -391,3 +393,196 @@
   cursor: pointer;
   background-color: #d39e00;
 }
+
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list a {
+  list-style: none;
+  text-decoration: none;
+  font-size: 1.5ren;
+  padding: 1rem;
+}
+
+.list a li {
+  background-color: #333;
+  padding: 0.5rem;
+}
+
+.Blog-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Arguments {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 20% 80%;
+      grid-template-columns: 20% 80%;
+}
+
+.Arguments .flex ul {
+  list-style: none;
+  text-decoration: none;
+  font-size: .8rem;
+  padding: 1rem;
+  background-color: #666;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-right: 5px solid #333;
+}
+
+.Arguments .flex ul a:hover {
+  color: yellow;
+  background-color: #fff;
+}
+
+.Arguments .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  gap: 0 2rem;
+}
+
+.Arguments .grid div:nth-child(even) {
+  font-size: 2rem;
+  color: green;
+  text-align: center;
+}
+
+.Arguments .grid div:nth-child(odd) {
+  font-size: 1.5rem;
+  color: blue;
+  text-align: left;
+}
+
+.Arguments .grid h3 {
+  font-size: 2rem;
+  color: red;
+  text-align: center;
+}
+
+.Arguments .grid p {
+  font-size: 0.7rem;
+  color: gray;
+  text-align: right;
+}
+
+.avatar {
+  background-color: red;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#if_and_else h2 {
+  color: initial;
+}
+
+#if_and_else h2 {
+  color: red;
+}
+
+.button-square {
+  width: 100px;
+  height: 100px;
+}
+
+.button-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+}
+
+.if_and_else-list {
+  font-size: 2rem;
+  background-color: #f2ece4;
+  color: #036;
+}
+
+#title {
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
+}
+
+#sub {
+  font-size: 2rem;
+  text-align: right;
+  padding: 0 0.5rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: blue;
+}
+
+.button {
+  height: 55px;
+  width: 110px;
+  background-color: green;
+}
+
+.button.button-square {
+  height: 55px;
+  width: 110px;
+  background-color: blue;
+}
+
+.button.button-circle {
+  height: 55px;
+  width: 110px;
+  background-color: blue;
+}
+
+.next {
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 1rem;
+  border-left-color: red;
+}
+/*# sourceMappingURL=main.min.css.map */

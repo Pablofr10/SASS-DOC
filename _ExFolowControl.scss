@@ -1,0 +1,150 @@
+// @if
+// Exemplo 1
+
+@mixin BgColor($color, $bg-color: false) {
+  color: $color;
+  @if $bg-color {
+    background-color: #333;
+    color: #fff;
+  }
+}
+
+#if_and_else {
+  h2 {
+    @include BgColor(initial, false);
+  }
+  h2 {
+    @include BgColor(red, false);
+  }
+}
+
+@mixin From($size, $circle: false) {
+  width: $size;
+  height: $size;
+  @if $circle {
+    border-radius: $size / 2;
+  }
+}
+
+.button {
+  &-square {
+    @include From(100px, false);
+  }
+  &-circle {
+    @include From(70px, true);
+  }
+}
+
+// @else
+// Example
+
+$light-bg: #f2ece4;
+$dark-text: #036;
+$dark-bg: #6b716f;
+$light-text: #d2e1dd;
+
+@mixin theme-colors($light-theme: true) {
+  @if $light-theme {
+    background-color: $light-bg;
+    color: $dark-text;
+  } @else {
+    background-color: $dark-bg;
+    color: $light-text;
+  }
+}
+
+.if_and_else-list {
+  font-size: 2rem;
+  @include theme-colors(true);
+}
+
+//Example 2
+
+@mixin title {
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
+}
+
+@mixin sub-t {
+  font-size: 2rem;
+  text-align: right;
+  padding: 0 0.5rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: blue;
+}
+
+@mixin Title($title: true) {
+  @if $title {
+    @include title;
+  } @else {
+    @include sub-t;
+  }
+}
+
+#title {
+  @include Title(true);
+}
+
+#sub {
+  @include Title(false);
+}
+
+// @else if
+
+//Exemplo 1
+
+@mixin Button($size, $color) {
+  height: $size / 2;
+  width: $size;
+
+  @if $color == info {
+    background-color: blue;
+  } @else if $color == success {
+    background-color: green;
+  } @else {
+    background-color: red;
+  }
+}
+
+.button {
+  @include Button(110px, success);
+}
+
+.button.button-square {
+  @include Button(110px, info);
+}
+
+.button.button-circle {
+  @include Button(110px, info);
+}
+
+// Exemplo 2
+
+@mixin triangule($size, $color, $direction) {
+  width: 0;
+  height: 0;
+
+  border-color: transparent;
+  border-style: solid;
+  border-width: $size/2;
+
+  @if $direction == up {
+    border-bottom-color: $color;
+  } @else if $direction == right {
+    border-left-color: $color;
+  } @else if $direction == down {
+    border-top-color: $color;
+  } @else if $direction == left {
+    border-right-color: $color;
+  } @else {
+    @error "Unknown direction #{$direction}.";
+  }
+}
+
+.next {
+  @include triangule(2rem, red, right);
+}
